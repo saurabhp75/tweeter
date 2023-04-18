@@ -8,26 +8,30 @@ import SidebarTweetButton from "./SidebarTweetButton";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { signOut } from "next-auth/react";
 
-const items = [
-  {
-    icon: BsHouseFill,
-    label: "Home",
-    href: "/",
-  },
-  {
-    icon: BsBellFill,
-    label: "Notifications",
-    href: "/notifications",
-  },
-  {
-    icon: FaUser,
-    label: "Profile",
-    href: `/users/123`,
-  },
-];
+
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
+
+  const items = [
+    {
+      icon: BsHouseFill,
+      label: "Home",
+      href: "/",
+    },
+    {
+      icon: BsBellFill,
+      label: "Notifications",
+      href: "/notifications",
+      auth: true,
+    },
+    {
+      icon: FaUser,
+      label: "Profile",
+      href: `/users/${currentUser?.id}`,
+      auth: true,
+    },
+  ];
 
   return (
     <div className="h-full col-span-1 pr-4 md:pr-6">
@@ -40,6 +44,7 @@ const Sidebar = () => {
               href={item.href}
               icon={item.icon}
               label={item.label}
+              auth={item.auth}
             />
           ))}
           {currentUser && (
