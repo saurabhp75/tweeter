@@ -1,4 +1,7 @@
-# To Do
+# Twitter clone built using
 
-- add lucide-react
-- Add Shadcn ui
+- Nextjs
+- Prisma
+- Mongodb
+- NextAuth
+- Tailwind

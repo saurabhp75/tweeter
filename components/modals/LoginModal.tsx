@@ -62,7 +62,7 @@ const LoginModal = () => {
   const footerContent = (
     <div className="mt-4 text-center text-neutral-400">
       <p>
-        First time using Twitter?
+        First time using Tweeter?
         <span
           onClick={onToggle}
           className="text-white cursor-pointer hover:underline"
